@@ -78,6 +78,17 @@ class BasicWorldDemo {
     plane.rotation.x = -Math.PI / 2;
     this._scene.add(plane);
 
+    const box = new THREE.Mesh(
+      new THREE.BoxGeometry(5, 5, 5),
+      new THREE.MeshStandardMaterial({
+          color: 0x000000,
+      })
+    );
+    box.position.set(0, 10, 0); 
+    box.castShadow = true; 
+    box.receiveShadow = true; 
+    this._scene.add(box);
+    
   
     this._RAF();
   }
